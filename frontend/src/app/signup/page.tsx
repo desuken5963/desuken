@@ -24,7 +24,8 @@ export default function SignUp() {
       if (res.ok) {
         alert('Sign up successful');
       } else {
-        setError('Sign up failed');
+        const { message } = await res.json();
+        setError(message || 'Sign up failed');
       }
     } catch (err) {
       console.error(err);
