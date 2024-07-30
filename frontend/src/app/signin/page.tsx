@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -18,6 +20,7 @@ export default function SignIn() {
       });
       if (res.ok) {
         alert('Sign in successful');
+        router.push('/dashboard');
       } else {
         const { message } = await res.json();
         setError(message || 'Sign in failed');
