@@ -6,7 +6,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./backend:/app 
+      - ./backend:/app
     depends_on:
       - db
   frontend:
@@ -16,11 +16,11 @@ services:
     volumes:
       - ./frontend:/app
     ports:
-      - 3000:3000 
+      - 3000:3000
   db:
     image: "postgres:15-alpine"
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=db
