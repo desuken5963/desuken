@@ -1,3 +1,3 @@
-# learn_architecture
+# learn-architecture
 
 クリーンアーキテクチャを学ぶためのリポジトリ
